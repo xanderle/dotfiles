@@ -96,9 +96,6 @@ alias man=batman.sh
 # RIPGREP
 zinit ice from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
 zinit light BurntSushi/ripgrep
-# NEOVIM
-zinit ice from"gh-r" as"program" bpick"*macos*" ver"stable" pick"nvim/bin/nvim"
-zinit light neovim/neovim
 # FORGIT
 zinit ice wait lucid
 zinit load 'wfxr/forgit'
@@ -229,3 +226,11 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.config/scripts"
+
+##################
+# Virtualenv wrp #
+##################
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export PROJECT_HOME=$HOME/Projects
+source /usr/local/bin/virtualenvwrapper.sh
