@@ -61,12 +61,18 @@ zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps -
 zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+# FZF BYNARY AND TMUX HELPER SCRIPT
+zinit ice lucid wait'0c' as"command" id-as"junegunn/fzf-tmux" pick"bin/fzf-tmux"
+zinit light junegunn/fzf
 # BIND MULTIPLE WIDGETS USING FZF
 zinit ice lucid wait'0c' multisrc"shell/{completion,key-bindings}.zsh" id-as"junegunn/fzf_completions" pick"/dev/null"
 zinit light junegunn/fzf
 # FZF-TAB
 zinit ice wait"1" lucid
 zinit light Aloxaf/fzf-tab
+# SYNTAX HIGHLIGHTING
+zinit ice wait"0c" lucid atinit"zpcompinit;zpcdreplay"
+zinit light zdharma/fast-syntax-highlighting
 
 if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
