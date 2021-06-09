@@ -1,14 +1,20 @@
 return require('packer').startup(function()
   use  { 'wbthomason/packer.nvim' }
+
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'
   use { 'neovim/nvim-lspconfig', config = function() 
     require 'plugins.nvim-lspconfig'
   end }
+
   use { 'hrsh7th/nvim-compe', config = function() 
 	  require 'plugins.nvim-compe'
   end }
 
+  -- Debugger
+  use { 'mfussenegger/nvim-dap', config = function()
+      require 'plugins.nvim-dap'
+  end }
   -- Fuzzy finder
   use {
       'nvim-telescope/telescope.nvim',
