@@ -15,14 +15,17 @@ return require('packer').startup(function()
   use { 'mfussenegger/nvim-dap', config = function()
       require 'plugins.nvim-dap'
   end }
-  -- Fuzzy finder
+  -- fzf
+  use {'junegunn/fzf', run = 'fzf#install()' }
+  use 'junegunn/fzf.vim'
+  -- terescope 
   use {
       'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
       config = function() require 'plugins.telescope' end
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-
+  use {'nvim-telescope/telescope-dap.nvim' }
   -- Vim dispatch
   use { 'tpope/vim-dispatch' }
   -- Fugitive for Git
