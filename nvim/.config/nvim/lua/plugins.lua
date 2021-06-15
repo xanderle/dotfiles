@@ -40,5 +40,20 @@ return require('packer').startup(function()
             require'material'.set()
         end
     }
+ -- plz help me key bind
+ use {
+  "folke/which-key.nvim",
+  config = function()
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
+-- file explorer and icons
+-- " requires
+ use 'kyazdani42/nvim-web-devicons' 
+ use'kyazdani42/nvim-tree.lua'
 end)
 -- https://github.com/tomaskallup/dotfiles/tree/master/nvim/lua/plugins
