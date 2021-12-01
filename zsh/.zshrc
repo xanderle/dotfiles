@@ -74,7 +74,6 @@ plugins=(
     git
     docker
     kubectl
-    thefuck
     vi-mode
     fzf-tab
     zsh-history-substring-search
