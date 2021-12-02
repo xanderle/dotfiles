@@ -7,8 +7,10 @@ return require('packer').startup(function()
     require 'plugins.nvim-lspconfig'
   end }
 
-  use { 'hrsh7th/nvim-compe', config = function() 
-	  require 'plugins.nvim-compe'
+use 'hrsh7th/cmp-nvim-lsp'
+
+  use { 'hrsh7th/nvim-cmp', config = function() 
+	  require 'plugins.nvim-cmp'
   end }
 
   -- Debugger
